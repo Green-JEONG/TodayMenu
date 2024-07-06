@@ -45,7 +45,6 @@ public class Login extends JFrame {
 
         btnSignup.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                // 회원가입 화면으로 이동
                 Signup signup = new Signup();
                 signup.setVisible(true);
                 dispose();
@@ -54,13 +53,13 @@ public class Login extends JFrame {
 
         btnLogin.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                // 로그인 로직 구현 (예: 사용자 인증)
                 String username = txtUsername.getText();
                 String password = new String(txtPassword.getPassword());
 
                 if (username.equals("admin") && password.equals("admin")) {
-                    JOptionPane.showMessageDialog(null, "Login successful!");
-                    // 로그인 성공 후의 로직
+                    Home home = new Home(username);
+                    home.setVisible(true);
+                    dispose();
                 } else {
                     JOptionPane.showMessageDialog(null, "Invalid username or password");
                 }

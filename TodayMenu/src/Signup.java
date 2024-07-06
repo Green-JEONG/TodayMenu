@@ -54,7 +54,6 @@ public class Signup extends JFrame {
 
         btnCancel.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                // 로그인 화면으로 돌아가기
                 Login login = new Login();
                 login.setVisible(true);
                 dispose();
@@ -63,7 +62,6 @@ public class Signup extends JFrame {
 
         btnRegister.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                // 회원가입 로직 구현 (예: 사용자 저장)
                 String username = txtUsername.getText();
                 String password = new String(txtPassword.getPassword());
                 String confirmPassword = new String(txtConfirmPassword.getPassword());
@@ -71,7 +69,6 @@ public class Signup extends JFrame {
                 if (!password.equals(confirmPassword)) {
                     JOptionPane.showMessageDialog(null, "Passwords do not match");
                 } else {
-                    // 회원가입 성공 로직
                     JOptionPane.showMessageDialog(null, "Signup successful!");
                     Login login = new Login();
                     login.setVisible(true);
